@@ -7,21 +7,21 @@ void setup()
 }
 
 int y = 1;
-PVector pos = new PVector(0, 0);
+PVector pos = new PVector(50, 100);
 int directionX = 1;
 int directionY = 1;
 
 void draw()
 {
   if (pos.x <= 0) {
-    directionX = 1;
+    directionX = int(random(1, 5));
   } else if (pos.x >= width) {
-    directionX = -1;
+    directionX = int(random(-1, -5));
   }
   if (pos.y <= 0) {
-    directionY = 1;
+    directionY = int(random(1, 5));
   } else if (pos.y >= height) {
-    directionY = -1;
+    directionY = int(random(-1, -5));
   }
   pos.x += directionX;
   pos.y += directionY;
