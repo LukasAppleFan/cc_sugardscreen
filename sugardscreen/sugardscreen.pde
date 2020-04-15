@@ -33,8 +33,8 @@ class Ball {
     ellipse(pos.x, pos.y, size, size);
   }
   
-  void move(int _spd) {
-    spd = _spd;
+  void move() {
+    spd = int(random(5, 10));
     stayIn();
     pos.x += directionX;
     pos.y += directionY;
@@ -42,14 +42,14 @@ class Ball {
   
   void stayIn() {
     if (pos.x <= 0) {
-      directionX = spd;
+      directionX = int(random(5, 10));
     } else if (pos.x >= width) {
-      directionX = -spd;
+      directionX = -int(random(5, 10));
     }
     if (pos.y <= 0) {
-      directionY = spd;
+      directionY = int(random(5, 10));
     } else if (pos.y >= height) {
-      directionY = -spd;
+      directionY = -int(random(5, 10));
     }
   }
 }
@@ -82,11 +82,11 @@ void draw()
   ellipse(pos.x, pos.y, 50, 50);
   
   ball.display();
-  ball.move(int(random(5, 10)));
+  ball.move();
   
   for (int i = 0; i < balls.length; ++i)
   {
     balls[i].display();
-    balls[i].move(int(random(5, 10)));
+    balls[i].move();
   }
 }
