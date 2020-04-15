@@ -14,6 +14,8 @@ int directionY = 1;
 class Ball {
   PVector pos;
   int size;
+  int directionX = 1;
+  int directionY = 1;
   
   Ball(int _size) {
     pos = new PVector(width/2, height/2);
@@ -23,6 +25,21 @@ class Ball {
   void display() {
     fill(0, 255, 0);
     ellipse(pos.x, pos.y, size, size);
+  }
+  
+  void move() {
+    if (pos.x <= 0) {
+    directionX = int(random(1, 5));
+  } else if (pos.x >= width) {
+    directionX = int(random(-1, -5));
+  }
+  if (pos.y <= 0) {
+    directionY = int(random(1, 5));
+  } else if (pos.y >= height) {
+    directionY = int(random(-1, -5));
+  }
+  pos.x += directionX;
+  pos.y += directionY;
   }
 }
 
@@ -48,4 +65,5 @@ void draw()
   ellipse(pos.x, pos.y, 50, 50);
   
   ball.display();
+  ball.move();
 }
