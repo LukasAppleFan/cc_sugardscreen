@@ -28,19 +28,21 @@ class Ball {
   }
   
   void move() {
-    if (pos.x <= 0) {
-    directionX = int(random(1, 5));
-  } else if (pos.x >= width) {
-    directionX = int(random(-1, -5));
+      if (pos.x <= 0) {
+      directionX = int(random(1, 5));
+    } else if (pos.x >= width) {
+      directionX = int(random(-1, -5));
+    }
+    if (pos.y <= 0) {
+      directionY = int(random(1, 5));
+    } else if (pos.y >= height) {
+      directionY = int(random(-1, -5));
+    }
+    pos.x += directionX;
+    pos.y += directionY;
   }
-  if (pos.y <= 0) {
-    directionY = int(random(1, 5));
-  } else if (pos.y >= height) {
-    directionY = int(random(-1, -5));
-  }
-  pos.x += directionX;
-  pos.y += directionY;
-  }
+  
+  void stay
 }
 
 Ball ball = new Ball(50);
