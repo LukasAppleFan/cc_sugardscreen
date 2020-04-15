@@ -4,6 +4,11 @@ void setup()
   background(100);
   fill(255, 0, 0);
   ellipse(width/2, height/2, 50, 50);
+  
+  for (int i = 0; i < balls.length; ++i)
+  {
+    balls[i] = new Ball(10);
+  }
 }
 
 int y = 1;
@@ -50,6 +55,12 @@ class Ball {
 }
 
 Ball ball = new Ball(50);
+Ball ball1 = new Ball(60);
+Ball ball2 = new Ball(70);
+Ball ball3 = new Ball(50);
+Ball ball4 = new Ball(50);
+Ball ball5 = new Ball(50);
+Ball balls[] = new Ball[100];
 
 
 void draw()
@@ -72,4 +83,10 @@ void draw()
   
   ball.display();
   ball.move(int(random(5, 10)));
+  
+  for (int i = 0; i < balls.length; ++i)
+  {
+    balls[i].display();
+    balls[i].move(int(random(5, 10)));
+  }
 }
